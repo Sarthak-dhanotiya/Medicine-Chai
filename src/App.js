@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 const menuData = [
   {
     id: 1,
-    name: "Choclate Chai",
+    name: "Chocl Chai",
     category: "Hot Beverages",
     price: "₹10",
     image:
