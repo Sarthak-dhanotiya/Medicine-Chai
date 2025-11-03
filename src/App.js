@@ -474,7 +474,7 @@ function App() {
           </span>
         <button
   onClick={() => {
-    const upiID = "medicinechai@oksbi"; // 🧾 Replace with your real UPI ID
+    const upiID = "7617283833@ybl"; // 🧾 Replace with your real UPI ID
     const payeeName = "Medicine Chai Café";
     const amount = total;
     const upiLink = `upi://pay?pa=${upiID}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=INR`;
