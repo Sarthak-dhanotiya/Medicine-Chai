@@ -200,6 +200,8 @@ const menuData = [
   },
 ];
 
+
+
 function App() {
   const [filter, setFilter] = useState("All");
   const [cart, setCart] = useState([]);
@@ -470,8 +472,16 @@ function App() {
           <span>
             🛍️ <b>{cart.length}</b> items | <b>₹{total}</b>
           </span>
-          <button
-  onClick={() => setShowQR(true)}
+        <button
+  onClick={() => {
+    const upiID = "medicinechai@oksbi"; // 🧾 Replace with your real UPI ID
+    const payeeName = "Medicine Chai Café";
+    const amount = total;
+    const upiLink = `upi://pay?pa=${upiID}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=INR`;
+
+    // Open PhonePe, Google Pay, or other UPI apps
+    window.location.href = upiLink;
+  }}
   style={{
     background: "#c72e2e",
     color: "white",
