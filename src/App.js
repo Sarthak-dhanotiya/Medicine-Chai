@@ -474,12 +474,13 @@ function App() {
           </span>
         <button
   onClick={() => {
-    const upiID = "7617283833@ybl"; // 🧾 Replace with your real UPI ID
+    const upiID = "7617283833@ybl"; 
     const payeeName = "Medicine Chai Café";
     const amount = total;
-    const upiLink = `upi://pay?pa=${upiID}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=INR`;
+    const upiLink = `upi://pay?pa=medicinechai@oksbi&pn=Medicine Chai Café&am=50&cu=INR
+`;
 
-    // Open PhonePe, Google Pay, or other UPI apps
+
     window.location.href = upiLink;
   }}
   style={{
