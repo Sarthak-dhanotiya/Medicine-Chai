@@ -48,12 +48,12 @@ function App() {
         style={{
           height: "100vh",
           width: "100vw",
-          backgroundImage: "url('/images/indian-tea-chai-cup-background-business-wall-print_1017-53917.jpg')",
+          // backgroundImage: "url('/images/indian-tea-chai-cup-background-business-wall-print_1017-53917.jpg')",
           backgroundSize: "cover",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          color: "white",
+          color: "black",
           fontSize: "45px",
           fontWeight: "bold",
           flexDirection: "column",
@@ -144,7 +144,7 @@ function App() {
           <div style={{ background: "white", padding: "25px 35px", borderRadius: "12px", textAlign: "center", color: "black" }}>
             <h2>Scan & Pay ₹{total}</h2>
             <QRCodeCanvas value={`upi://pay?pa=medicinechai@oksbi&pn=Medicine%20Chai%20Cafe&am=${total}&cu=INR`} size={220} />
-            <a href={`upi://pay?pa=medicinechai@oksbi&pn=Medicine%20Chai%20Cafe&am=${total}&cu=INR`} style={{ display: "block", marginTop: "10px", color: "#c72e2e" }}>Open UPI App</a>
+            <a href={`upi://pay?pa=7617283833@ybl&pn=Medicine%20Chai%20Cafe&am=${total}&cu=INR`} style={{ display: "block", marginTop: "10px", color: "#c72e2e" }}>Open UPI App</a>
             <button onClick={() => setShowQR(false)} style={{ marginTop: "15px", background: "#c72e2e", color: "white", border: "none", padding: "8px 16px", borderRadius: "6px" }}>Close</button>
           </div>
         </div>
