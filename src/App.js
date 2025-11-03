@@ -8,7 +8,7 @@ const menuData = [
     category: "Hot Beverages",
     price: "₹10",
     image:
-      "/images/simple-and-hot-tea-logo-design-template-tea-cup-logo-design-free-vector (1).jpg",
+      "/images/Vanilla-Chai-Hot-Chocolate-1.webp",
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const menuData = [
     category: "Hot Beverages",
     price: "₹10",
     image:
-      "/images/simple-and-hot-tea-logo-design-template-tea-cup-logo-design-free-vector (1).jpg",
+      "/images/Adrak-masala-chai-1568x1045.jpeg",
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const menuData = [
     category: "Hot Beverages",
     price: "₹20",
     image:
-      "/images/simple-and-hot-tea-logo-design-template-tea-cup-logo-design-free-vector (1).jpg",
+      "/images/Masala-Chai-.jpg",
   },
   {
     id: 4,
@@ -32,7 +32,7 @@ const menuData = [
     category: "Hot Beverages",
     price: "₹15",
     image:
-      "/images/simple-and-hot-tea-logo-design-template-tea-cup-logo-design-free-vector (1).jpg",
+      "/images/1x1-rose-masala-chai-how-to-make-rose-tea-video-recipe.jpg",
   },
   {
     id: 5,
@@ -40,7 +40,7 @@ const menuData = [
     category: "Hot Beverages",
     price: "₹20",
     image:
-      "/images/simple-and-hot-tea-logo-design-template-tea-cup-logo-design-free-vector (1).jpg",
+      "/images/paan-chai-thumb.jpg",
   },
   {
     id: 6,
@@ -48,7 +48,7 @@ const menuData = [
     category: "Hot Beverages",
     price: "₹20",
     image:
-      "/images/simple-and-hot-tea-logo-design-template-tea-cup-logo-design-free-vector (1).jpg",
+      "/images/WhatsApp-Image-2023-11-30-at-8.20.48-AM-3.jpeg",
   },
   {
     id: 7,
@@ -56,21 +56,21 @@ const menuData = [
     category: "Hot Beverages",
     price: "₹50",
     image:
-      "/images/simple-and-hot-tea-logo-design-template-tea-cup-logo-design-free-vector (1).jpg",
+      "/images/Green-Tea.webp",
   },
   {
     id: 8,
     name: "Plain Cold Coffee",
     category: "Cold Beverages",
     price: "₹60",
-    image: "/images/istockphoto-542212056-612x612.jpg",
+    image: "/images/cold-coffee.jpg",
   },
   {
     id: 9,
     name: "Choco Cold Coffee",
     category: "Cold Beverages",
     price: "₹70",
-    image: "/images/istockphoto-542212056-612x612.jpg",
+    image: "/images/chocolate-iced-coffee-recipe-vivani-organic.png",
   },
   {
     id: 10,
