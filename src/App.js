@@ -473,7 +473,7 @@ function App() {
             🛍️ <b>{cart.length}</b> items | <b>₹{total}</b>
           </span>
         <button
- <button
+ 
   onClick={() => {
     const upiID = "7617283833@ybl";
     const payeeName = "Medicine Chai Café";
