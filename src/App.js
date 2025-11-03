@@ -473,15 +473,22 @@ function App() {
             🛍️ <b>{cart.length}</b> items | <b>₹{total}</b>
           </span>
         <button
+ <button
   onClick={() => {
-    const upiID = "7617283833@ybl"; 
+    const upiID = "7617283833@ybl";
     const payeeName = "Medicine Chai Café";
     const amount = total;
-    const upiLink = `upi://pay?pa=medicinechai@oksbi&pn=Medicine Chai Café&am=50&cu=INR
-`;
+    const currency = "INR";
 
+    const upiLink = `upi://pay?pa=${upiID}&pn=${encodeURIComponent(
+      payeeName
+    )}&am=${amount}&cu=${currency}`;
 
-    window.location.href = upiLink;
+    if (/Android|iPhone/i.test(navigator.userAgent)) {
+      window.location.href = upiLink;
+    } else {
+      alert("Please open this website on your mobile phone to make UPI payment!");
+    }
   }}
   style={{
     background: "#c72e2e",
@@ -494,6 +501,7 @@ function App() {
 >
   Proceed to Pay
 </button>
+
 
         </div>
       )}
