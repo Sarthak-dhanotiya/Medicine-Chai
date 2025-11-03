@@ -48,7 +48,7 @@ function App() {
         style={{
           height: "100vh",
           width: "100vw",
-          backgroundImage: "url('/')",
+          backgroundImage: "url('/images/indian-tea-chai-cup-background-business-wall-print_1017-53917.jpg')",
           backgroundSize: "cover",
           display: "flex",
           justifyContent: "center",
