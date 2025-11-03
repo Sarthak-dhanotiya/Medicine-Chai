@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 const menuData = [
   {
     id: 1,
-    name: "Chocl Chai",
+    name: "Choclate Chai",
     category: "Hot Beverages",
     price: "₹10",
     image:
@@ -352,7 +352,7 @@ function App() {
     >
       <h2>Scan & Pay ₹{total}</h2>
       <img
-        src="/images/9a4bbc20-c73e-46de-98dc-5c92fca89a69.jpg"
+        src="/images/e63bb2bb-b79a-4816-91e4-417bc9d1ad0a.jpg"
         alt="Payment QR"
         style={{ width: "250px", marginTop: "15px", borderRadius: "10px" }}
       />
