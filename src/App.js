@@ -12,23 +12,26 @@ const menuData = [
   { id: 8, name: "Plain Cold Coffee", category: "Cold Beverages", price: "₹60", image: "/images/cold-coffee.jpg" },
   { id: 9, name: "Choco Cold Coffee", category: "Cold Beverages", price: "₹70", image: "/images/chocolate-iced-coffee-recipe-vivani-organic.png" },
   { id: 10, name: "Strong Cold Coffee", category: "Cold Beverages", price: "₹70", image: "/images/istockphoto-542212056-612x612.jpg" },
-  { id: 11, name: "Oreo Shake", category: "Milkshakes", price: "₹90", image: "/images/oreo-milkshake-t1.jpg" },
-  { id: 12, name: "Vanilla Shake", category: "Milkshakes", price: "₹99", image: "/images/vanilla-milkshake-fb-ig-5-1156x1156.jpg" },
-  { id: 13, name: "Kitkat Shake", category: "Milkshakes", price: "₹99", image: "/images/Kitkat_Milk_Shake_Recipe_xdfmk_Pak101(dot)com.jpg" },
-  { id: 14, name: "Plain Maggie", category: "Maggie", price: "₹40", image: "/images/71d6db959ed3f8e47e7ef8ccbf74ea7f.jpg" },
-  { id: 15, name: "Double Masala Maggie", category: "Maggie", price: "₹50", image: "/images/71d6db959ed3f8e47e7ef8ccbf74ea7f.jpg" },
-  { id: 16, name: "Vegetable Maggie", category: "Maggie", price: "₹60", image: "/images/71d6db959ed3f8e47e7ef8ccbf74ea7f.jpg" },
-  { id: 17, name: "Cheese Maggie", category: "Maggie", price: "₹70", image: "/images/71d6db959ed3f8e47e7ef8ccbf74ea7f.jpg" },
-  { id: 18, name: "Cheese Corn Maggie", category: "Maggie", price: "₹60", image: "/images/71d6db959ed3f8e47e7ef8ccbf74ea7f.jpg" },
-  { id: 19, name: "Maska Bun", category: "Bites", price: "₹25", image: "/images/maska3.jpg" },
-  { id: 20, name: "Garlic Bun", category: "Bites", price: "₹30", image: "/images/Korean bun on black plate.jpeg" },
-  { id: 21, name: "Garlic Bread", category: "Bites", price: "₹30", image: "/images/homemade-garlic-bread-500x750.jpg" },
-  { id: 22, name: "Cheese Garlic Bread", category: "Bites", price: "₹50", image: "/images/homemade-garlic-bread-500x750.jpg" },
-  { id: 23, name: "Salted French Fries", category: "Bites", price: "₹50", image: "/images/French-Fries-french-fries-35339396-1600-1455.jpg" },
-  { id: 24, name: "Peri Peri French Fries", category: "Bites", price: "₹60", image: "/images/French-Fries-french-fries-35339396-1600-1455.jpg" },
-  { id: 25, name: "Garlic Shots", category: "Bites", price: "₹70", image: "/images/m36h0nk8_potato-cheese-shots_625x300_04_October_21.webp" },
-  { id: 26, name: "Cheese Shots", category: "Bites", price: "₹70", image: "/images/m36h0nk8_potato-cheese-shots_625x300_04_October_21.webp" },
-  { id: 27, name: "Loaded Fries", category: "Bites", price: "₹99", image: "/images/1984660106.jpeg" },
+  { id: 11, name: "Cold Coffee with Ice Cream", category: "Cold Beverages", price: "₹80", image: "/images/20140510_133410.jpg" },
+  { id: 12, name: "Hazelnut Cold Coffee", category: "Cold Beverages", price: "₹80", image: "/images/hazelnut-iced-coffee-1-720x720.jpg" },
+  { id: 13, name: "MDC Special Cold Coffee", category: "Cold Beverages", price: "₹90", image: "/images/20140510_133410.jpg" },
+  { id: 14, name: "Oreo Shake", category: "Milkshakes", price: "₹90", image: "/images/oreo-milkshake-t1.jpg" },
+  { id: 15, name: "Vanilla Shake", category: "Milkshakes", price: "₹99", image: "/images/vanilla-milkshake-fb-ig-5-1156x1156.jpg" },
+  { id: 16, name: "Kitkat Shake", category: "Milkshakes", price: "₹99", image: "/images/Kitkat_Milk_Shake_Recipe_xdfmk_Pak101(dot)com.jpg" },
+  { id: 17, name: "Plain Maggie", category: "Maggie", price: "₹40", image: "/images/Plain-maggie.webp" },
+  { id: 18, name: "Double Masala Maggie", category: "Maggie", price: "₹50", image: "/images/Masala-Maggi-Recipe.jpg" },
+  { id: 19, name: "Vegetable Maggie", category: "Maggie", price: "₹60", image: "/images/vegetable-maggi-noodles.jpg" },
+  { id: 20, name: "Cheese Maggie", category: "Maggie", price: "₹70", image: "/images/cheese-maggie-noodles-instant-served-pan-topped-then-placed-over-rustic-wooden-background-selective-focus-224000423.jpg" },
+  { id: 21, name: "Cheese Corn Maggie", category: "Maggie", price: "₹60", image: "/images/maxresdefault (1).jpg" },
+  { id: 22, name: "Maska Bun", category: "Bites", price: "₹25", image: "/images/maska3.jpg" },
+  { id: 23, name: "Garlic Bun", category: "Bites", price: "₹30", image: "/images/Korean bun on black plate.jpeg" },
+  { id: 24, name: "Garlic Bread", category: "Bites", price: "₹30", image: "/images/homemade-garlic-bread-500x750.jpg" },
+  { id: 25, name: "Cheese Garlic Bread", category: "Bites", price: "₹50", image: "/images/homemade-garlic-bread-500x750.jpg" },
+  { id: 26, name: "Salted French Fries", category: "Bites", price: "₹50", image: "/images/French-Fries-french-fries-35339396-1600-1455.jpg" },
+  { id: 27, name: "Peri Peri French Fries", category: "Bites", price: "₹60", image: "/images/French-Fries-french-fries-35339396-1600-1455.jpg" },
+  { id: 28, name: "Garlic Shots", category: "Bites", price: "₹70", image: "/images/m36h0nk8_potato-cheese-shots_625x300_04_October_21.webp" },
+  { id: 29, name: "Cheese Shots", category: "Bites", price: "₹70", image: "/images/m36h0nk8_potato-cheese-shots_625x300_04_October_21.webp" },
+  { id: 30, name: "Loaded Fries", category: "Bites", price: "₹99", image: "/images/1984660106.jpeg" },
 ];
 
 function App() {
@@ -38,7 +41,7 @@ function App() {
   const [showQR, setShowQR] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowSplash(false), 3000);
+    const timer = setTimeout(() => setShowSplash(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -48,20 +51,20 @@ function App() {
         style={{
           height: "100vh",
           width: "100vw",
-          // backgroundImage: "url('/images/indian-tea-chai-cup-background-business-wall-print_1017-53917.jpg')",
+          backgroundImage: "url('/images/color-depth-of-field-environment-1591447.jpg')",
           backgroundSize: "cover",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          color: "black",
+          color: "white",
           fontSize: "45px",
           fontWeight: "bold",
           flexDirection: "column",
         }}
       >
         🙏 Namaste Shamgarh ☕
-        <p style={{ fontSize: "20px", marginTop: "10px" }}>
-          Welcome to Medicine Chai Café
+        <p style={{ fontSize: "35px", marginTop: "5px" }}>
+          Welcome To Medicine Chai Cafe
         </p>
       </div>
     );
@@ -78,7 +81,9 @@ function App() {
     <div
       style={{
         fontFamily: "Poppins, sans-serif",
-        backgroundImage: "url('/images/istockphoto-542212056-612x612.jpg')",
+        // backgroundImage: "url('/images/istockphoto-542212056-612x612.jpg')",
+         backgroundImage: "url('/images/Gemini_Generated_Image_9fpvj99fpvj99fpv.png')",
+
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
@@ -88,7 +93,8 @@ function App() {
       {/* Header */}
       <header
         style={{
-          backgroundColor: "#c72e2e",
+          backgroundColor: "#796c6cff",
+          backgroundImage:"url('/images/Gemini_Generated_Image_a1ogy5a1ogy5a1og.png')",
           color: "white",
           padding: "15px 30px",
           display: "flex",
@@ -96,13 +102,13 @@ function App() {
           alignItems: "center",
         }}
       >
-        <h1>☕ Medicine Chai Café</h1>
+        <h1>☕ Medicine Chai = Therapy</h1>
         <div>🛒 <b>{cart.length}</b> items | <b>₹{total}</b></div>
       </header>
 
       {/* Filters */}
       <div style={{ display: "flex", justifyContent: "center", gap: "10px", padding: "20px", flexWrap: "wrap" }}>
-        {["All", "Hot Beverages", "Cold Beverages", "Milkshakes", "Maggie", "Bites"].map((cat) => (
+        {["All", "Hot Beverages", "Cold Beverages", "Milkshakes", "Maggie", "Bites","Burger","Sandwich"].map((cat) => (
           <button
             key={cat}
             onClick={() => setFilter(cat)}
