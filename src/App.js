@@ -32,6 +32,8 @@ const menuData = [
   { id: 28, name: "Garlic Shots", category: "Bites", price: "₹70", image: "/images/m36h0nk8_potato-cheese-shots_625x300_04_October_21.webp" },
   { id: 29, name: "Cheese Shots", category: "Bites", price: "₹70", image: "/images/m36h0nk8_potato-cheese-shots_625x300_04_October_21.webp" },
   { id: 30, name: "Loaded Fries", category: "Bites", price: "₹99", image: "/images/1984660106.jpeg" },
+  { id: 31, name: "Veg Burger", category: "Burger", price: "₹99", image: "/images/Easy-Veggie-Burger-Recipe-Vegan-Healthy-11.webp" },
+  { id: 32, name: "Cheese Burger", category: "Burger", price: "₹99", image: "/images/1984660106.jpeg" },
 ];
 
 function App() {
@@ -81,9 +83,7 @@ function App() {
     <div
       style={{
         fontFamily: "Poppins, sans-serif",
-        // backgroundImage: "url('/images/istockphoto-542212056-612x612.jpg')",
-         backgroundImage: "url('/images/Gemini_Generated_Image_9fpvj99fpvj99fpv.png')",
-
+        backgroundImage: "url('/images/Gemini_Generated_Image_9fpvj99fpvj99fpv.png')",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
@@ -94,7 +94,7 @@ function App() {
       <header
         style={{
           backgroundColor: "#796c6cff",
-          backgroundImage:"url('/images/Gemini_Generated_Image_a1ogy5a1ogy5a1og.png')",
+          backgroundImage: "url('/images/Gemini_Generated_Image_a1ogy5a1ogy5a1og.png')",
           color: "white",
           padding: "15px 30px",
           display: "flex",
@@ -102,42 +102,92 @@ function App() {
           alignItems: "center",
         }}
       >
-        <h1>☕ Medicine Chai = Therapy</h1>
-        <div>🛒 <b>{cart.length}</b> items | <b>₹{total}</b></div>
+        <h1>Medicine+Chai☕ = Therapy</h1>
+        <div>
+          🛒 <b>{cart.length}</b> items | <b>₹{total}</b>
+        </div>
       </header>
 
       {/* Filters */}
-      <div style={{ display: "flex", justifyContent: "center", gap: "10px", padding: "20px", flexWrap: "wrap" }}>
-        {["All", "Hot Beverages", "Cold Beverages", "Milkshakes", "Maggie", "Bites","Burger","Sandwich"].map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setFilter(cat)}
-            style={{
-              padding: "8px 16px",
-              borderRadius: "20px",
-              border: filter === cat ? "2px solid #c72e2e" : "1px solid gray",
-              background: filter === cat ? "#ffe6e8" : "white",
-              color: filter === cat ? "#c72e2e" : "black",
-              fontWeight: "bold",
-              cursor: "pointer",
-            }}
-          >
-            {cat}
-          </button>
-        ))}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          gap: "10px",
+          padding: "20px",
+          flexWrap: "wrap",
+        }}
+      >
+        {["All", "Hot Beverages", "Cold Beverages", "Milkshakes", "Maggie", "Bites", "Burger"].map(
+          (cat) => (
+            <button
+              key={cat}
+              onClick={() => setFilter(cat)}
+              style={{
+                padding: "8px 16px",
+                borderRadius: "20px",
+                border: filter === cat ? "2px solid #c72e2e" : "1px solid gray",
+                background: filter === cat ? "#ffe6e8" : "white",
+                color: filter === cat ? "#c72e2e" : "black",
+                fontWeight: "bold",
+                cursor: "pointer",
+              }}
+            >
+              {cat}
+            </button>
+          )
+        )}
       </div>
 
       {/* Menu Items */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "20px", padding: "20px", maxWidth: "1000px", margin: "0 auto" }}>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+          gap: "20px",
+          padding: "20px",
+          maxWidth: "1000px",
+          margin: "0 auto",
+        }}
+      >
         {filteredMenu.map((item) => (
-          <div key={item.id} style={{ border: "1px solid #ddd", borderRadius: "10px", overflow: "hidden", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
-            <img src={item.image} alt={item.name} style={{ width: "100%", height: "180px", objectFit: "cover" }} />
+          <div
+            key={item.id}
+            style={{
+              border: "1px solid #ddd",
+              borderRadius: "10px",
+              overflow: "hidden",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+            }}
+          >
+            <img
+              src={item.image}
+              alt={item.name}
+              style={{ width: "100%", height: "180px", objectFit: "cover" }}
+            />
             <div style={{ padding: "10px 15px" }}>
               <h3>{item.name}</h3>
               <p style={{ color: "gray" }}>{item.category}</p>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
                 <span style={{ fontWeight: "bold" }}>{item.price}</span>
-                <button onClick={() => addToCart(item)} style={{ background: "#c72e2e", color: "white", border: "none", padding: "6px 10px", borderRadius: "6px" }}>Add +</button>
+                <button
+                  onClick={() => addToCart(item)}
+                  style={{
+                    background: "#c72e2e",
+                    color: "white",
+                    border: "none",
+                    padding: "6px 10px",
+                    borderRadius: "6px",
+                  }}
+                >
+                  Add +
+                </button>
               </div>
             </div>
           </div>
@@ -146,21 +196,140 @@ function App() {
 
       {/* QR Payment Popup */}
       {showQR && (
-        <div style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", background: "rgba(0,0,0,0.85)", display: "flex", justifyContent: "center", alignItems: "center", color: "white", zIndex: 999 }}>
-          <div style={{ background: "white", padding: "25px 35px", borderRadius: "12px", textAlign: "center", color: "black" }}>
-            <h2>Scan & Pay ₹{total}</h2>
-            <QRCodeCanvas value={`upi://pay?pa=medicinechai@oksbi&pn=Medicine%20Chai%20Cafe&am=${total}&cu=INR`} size={220} />
-            <a href={`upi://pay?pa=7617283833@ybl&pn=Medicine%20Chai%20Cafe&am=${total}&cu=INR`} style={{ display: "block", marginTop: "10px", color: "#c72e2e" }}>Open UPI App</a>
-            <button onClick={() => setShowQR(false)} style={{ marginTop: "15px", background: "#c72e2e", color: "white", border: "none", padding: "8px 16px", borderRadius: "6px" }}>Close</button>
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            background: "rgba(0,0,0,0.85)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 999,
+          }}
+        >
+          <div
+            style={{
+              background: "white",
+              padding: "25px 35px",
+              borderRadius: "12px",
+              textAlign: "center",
+              color: "black",
+              width: "90%",
+              maxWidth: "400px",
+            }}
+          >
+            <h2>Scan or Choose App to Pay ₹{total}</h2>
+
+            <QRCodeCanvas
+              value={`upi://pay?pa=7617283833@ybl&pn=Medicine%20Chai%20Cafe&am=${total}&cu=INR`}
+              size={220}
+            />
+
+            <p style={{ marginTop: "10px", fontWeight: "bold" }}>Or Pay via:</p>
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-around",
+                marginTop: "10px",
+                flexWrap: "wrap",
+                gap: "10px",
+              }}
+            >
+              <a
+                href={`upi://pay?pa=7617283833@ybl&pn=Medicine%20Chai%20Cafe&am=${total}&cu=INR`}
+                style={{
+                  background: "#4285F4",
+                  color: "white",
+                  padding: "8px 14px",
+                  borderRadius: "6px",
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                }}
+              >
+                Google Pay
+              </a>
+
+              <a
+                href={`upi://pay?pa=7617283833@ybl&pn=Medicine%20Chai%20Cafe&am=${total}&cu=INR`}
+                style={{
+                  background: "#5C2D91",
+                  color: "white",
+                  padding: "8px 14px",
+                  borderRadius: "6px",
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                }}
+              >
+                PhonePe
+              </a>
+
+              <a
+                href={`upi://pay?pa=7617283833@ybl&pn=Medicine%20Chai%20Cafe&am=${total}&cu=INR`}
+                style={{
+                  background: "#00B9F1",
+                  color: "white",
+                  padding: "8px 14px",
+                  borderRadius: "6px",
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                }}
+              >
+                Paytm
+              </a>
+            </div>
+
+            <button
+              onClick={() => setShowQR(false)}
+              style={{
+                marginTop: "20px",
+                background: "#c72e2e",
+                color: "white",
+                border: "none",
+                padding: "8px 16px",
+                borderRadius: "6px",
+                cursor: "pointer",
+              }}
+            >
+              Close
+            </button>
           </div>
         </div>
       )}
 
       {/* Cart */}
       {cart.length > 0 && (
-        <div style={{ position: "fixed", bottom: 0, width: "100%", background: "#fff", borderTop: "2px solid #c72e2e", padding: "15px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <span>🛍️ <b>{cart.length}</b> items | <b>₹{total}</b></span>
-          <button onClick={() => setShowQR(true)} style={{ background: "#c72e2e", color: "white", padding: "8px 16px", border: "none", borderRadius: "5px" }}>Proceed to Pay</button>
+        <div
+          style={{
+            position: "fixed",
+            bottom: 0,
+            width: "100%",
+            background: "#fff",
+            borderTop: "2px solid #c72e2e",
+            padding: "15px 20px",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <span>
+            🛍️ <b>{cart.length}</b> items | <b>₹{total}</b>
+          </span>
+          <button
+            onClick={() => setShowQR(true)}
+            style={{
+              background: "#c72e2e",
+              color: "white",
+              padding: "8px 16px",
+              border: "none",
+              borderRadius: "5px",
+            }}
+          >
+            Proceed to Pay
+          </button>
         </div>
       )}
     </div>
