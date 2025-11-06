@@ -43,31 +43,77 @@ function App() {
   const [showQR, setShowQR] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowSplash(false), 2000);
+    const timer = setTimeout(() => setShowSplash(false), 4000);
     return () => clearTimeout(timer);
   }, []);
 
+  // 🌟 Splash Animation
   if (showSplash) {
     return (
       <div
         style={{
           height: "100vh",
           width: "100vw",
-          backgroundImage: "url('/images/color-depth-of-field-environment-1591447.jpg')",
+          backgroundImage: "url('/images/huma-h-yardim-t8PobHUbMpY-unsplash.jpg')",
           backgroundSize: "cover",
+          backgroundPosition: "center",
           display: "flex",
+          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          color: "white",
-          fontSize: "45px",
-          fontWeight: "bold",
-          flexDirection: "column",
+          color: "#fff",
+          textAlign: "center",
+          fontFamily: "Poppins, sans-serif",
+          animation: "fadeIn 2s ease-in-out",
         }}
       >
-        🙏 Namaste Shamgarh ☕
-        <p style={{ fontSize: "35px", marginTop: "5px" }}>
-          Welcome To Medicine Chai Cafe
+        <h1
+          style={{
+            fontSize: "50px",
+            fontWeight: "700",
+            textShadow: "0 0 15px rgba(255, 200, 150, 0.8)",
+            animation: "float 3s ease-in-out infinite",
+          }}
+        >
+          🙏 Namaste <span style={{ color: "#f5b041" }}>Shamgarh</span>
+        </h1>
+        <p
+          style={{
+            fontSize: "30px",
+            marginTop: "15px",
+            color: "#f9f9f9",
+            fontWeight: "500",
+            textShadow: "0 0 10px rgba(255,255,255,0.6)",
+            animation: "fadeInUp 3s ease-in-out",
+          }}
+        >
+          Welcome To <span style={{ color: "#f1c40f" }}>Medicine Chai Cafe</span> ☕
         </p>
+
+        
+
+
+        
+
+        <style>
+          {`
+            @keyframes float {
+              0% { transform: translateY(0); }
+              50% { transform: translateY(-10px); }
+              100% { transform: translateY(0); }
+            }
+
+            @keyframes fadeIn {
+              from { opacity: 0; }
+              to { opacity: 1; }
+            }
+
+            @keyframes fadeInUp {
+              from { opacity: 0; transform: translateY(20px); }
+              to { opacity: 1; transform: translateY(0); }
+            }
+          `}
+        </style>
       </div>
     );
   }
@@ -76,14 +122,13 @@ function App() {
     filter === "All" ? menuData : menuData.filter((item) => item.category === filter);
 
   const addToCart = (item) => setCart([...cart, item]);
-
   const total = cart.reduce((acc, curr) => acc + Number(curr.price.replace("₹", "")), 0);
 
   return (
     <div
       style={{
         fontFamily: "Poppins, sans-serif",
-        backgroundImage: "url('/images/Gemini_Generated_Image_9fpvj99fpvj99fpv.png')",
+        backgroundImage: "url('/images/shubham-dhage-zzJO0o4M184-unsplash.jpg')",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
@@ -102,7 +147,11 @@ function App() {
           alignItems: "center",
         }}
       >
-        <h1>Medicine+Chai☕ = Therapy</h1>
+        <div style={{ textAlign: "left" }}>
+  <h1 style={{ margin: 0 }}>Medicine + Chai ☕</h1>
+  <h2 className="tagline">= Therapy</h2>
+</div>
+
         <div>
           🛒 <b>{cart.length}</b> items | <b>₹{total}</b>
         </div>
@@ -139,7 +188,7 @@ function App() {
         )}
       </div>
 
-      {/* Menu Items */}
+      {/* Menu */}
       <div
         style={{
           display: "grid",
@@ -194,7 +243,7 @@ function App() {
         ))}
       </div>
 
-      {/* QR Payment Popup */}
+      {/* QR Popup */}
       {showQR && (
         <div
           style={{
