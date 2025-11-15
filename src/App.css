@@ -1,38 +1,200 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Gradient animated background */
+.main-bg {
+  background: linear-gradient(-45deg, #f3e5ab, #f5c06d, #f9a825, #d35400);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
   min-height: 100vh;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Splash Screen */
+.splash-container {
+  height: 100vh;
+  width: 100vw;
+  background: url("/images/huma-h-yardim-t8PobHUbMpY-unsplash.jpg") center/cover no-repeat;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  color: white;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.welcome {
+  font-size: 50px;
+  font-weight: 700;
+  text-shadow: 0 0 15px rgba(255, 200, 150, 0.8);
+  animation: float 3s ease-in-out infinite;
+}
+
+.sub-welcome {
+  font-size: 30px;
+  color: #f9f9f9;
+  animation: fadeInUp 2s ease-in-out;
+}
+
+.tagline {
+  font-size: 25px;
+  margin-top: 10px;
+  color: #f5b041;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 10px #fff; }
+  100% { text-shadow: 0 0 20px #ffe082; }
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 15px;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+}
+
+/* Filters */
+.filters {
+  text-align: center;
+  margin: 20px 0;
+}
+.filters button {
+  background: white;
+  border: 2px solid #c72e2e;
+  border-radius: 20px;
+  margin: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.filters .active {
+  background: #c72e2e;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Menu Grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.menu-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.menu-card:hover {
+  transform: translateY(-5px);
+}
+.menu-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.price-cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.add-btn {
+  background: #c72e2e;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.qty-control button {
+  background: #c72e2e;
+  border: none;
+  color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.qty-control span {
+  margin: 0 8px;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Cart Bar */
+.cart-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  border-top: 2px solid #c72e2e;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart-bar button {
+  background: #c72e2e;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* QR Popup */
+.qr-popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex; justify-content: center; align-items: center;
+}
+.qr-content {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  text-align: center;
+}
+.close-btn {
+  background: #c72e2e;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
 }
