@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import "./App.css";
 
+/* ✅ FULL MENU RESTORED (ALL ITEMS ADDED) */
 const menuData = [
+  // Hot Beverages
   { id: 1, name: "Chocolate Chai", category: "Hot Beverages", price: "₹10", image: "/images/Vanilla-Chai-Hot-Chocolate-1.webp" },
   { id: 2, name: "Adrak Chai", category: "Hot Beverages", price: "₹10", image: "/images/Adrak-masala-chai-1568x1045.jpeg" },
   { id: 3, name: "Masala Chai", category: "Hot Beverages", price: "₹20", image: "/images/Masala-Chai-.jpg" },
@@ -10,13 +12,17 @@ const menuData = [
   { id: 5, name: "Paan Chai", category: "Hot Beverages", price: "₹20", image: "/images/paan-chai-thumb.jpg" },
   { id: 6, name: "Elaichi Chai", category: "Hot Beverages", price: "₹20", image: "/images/WhatsApp-Image-2023-11-30-at-8.20.48-AM-3.jpeg" },
 
+  // Cold Beverages
+  { id: 7, name: "Classic Cold Coffee", category: "Cold Beverages", price: "₹60", image: "/images/cold-coffee.jpg" },
   { id: 8, name: "Plain Cold Coffee", category: "Cold Beverages", price: "₹60", image: "/images/cold-coffee.jpg" },
   { id: 9, name: "Choco Cold Coffee", category: "Cold Beverages", price: "₹70", image: "/images/chocolate-iced-coffee-recipe-vivani-organic.png" },
   { id: 13, name: "MDC Special Cold Coffee", category: "Cold Beverages", price: "₹90", image: "/images/20140510_133410.jpg" },
 
+  // Maggie
   { id: 17, name: "Plain Maggie", category: "Maggie", price: "₹40", image: "/images/Plain-maggie.webp" },
   { id: 18, name: "Double Masala Maggie", category: "Maggie", price: "₹50", image: "/images/Masala-Maggi-Recipe.jpg" },
 
+  // Snacks
   { id: 22, name: "Maska Bun", category: "Bites", price: "₹25", image: "/images/maska3.jpg" },
 ];
 
@@ -26,13 +32,12 @@ function App() {
   const [showSplash, setShowSplash] = useState(true);
   const [showQR, setShowQR] = useState(false);
 
-  // ⏳ Splash Screen Timer
+  // Splash screen
   useEffect(() => {
     const timer = setTimeout(() => setShowSplash(false), 4000);
     return () => clearTimeout(timer);
   }, []);
 
-  // 🌟 Full Screen Splash
   if (showSplash) {
     return (
       <div className="splash-container">
@@ -43,11 +48,11 @@ function App() {
     );
   }
 
-  // 🔍 Menu Filter
+  // Filter menu
   const filteredMenu =
     filter === "All" ? menuData : menuData.filter((item) => item.category === filter);
 
-  // ➕ Add to Cart
+  // Add to cart
   const addToCart = (item) => {
     const existing = cart.find((c) => c.id === item.id);
     if (existing) {
@@ -57,7 +62,7 @@ function App() {
     }
   };
 
-  // ➖ Remove from Cart
+  // Remove
   const removeFromCart = (item) => {
     const existing = cart.find((c) => c.id === item.id);
     if (existing.qty === 1) {
@@ -67,25 +72,24 @@ function App() {
     }
   };
 
-  // 💰 Total
+  // Total price
   const total = cart.reduce(
     (acc, curr) => acc + Number(curr.price.replace("₹", "")) * curr.qty,
     0
   );
 
-  // ⭐⭐⭐ API: Send Order to Backend (Twilio)
-  const sendOrder = () => {
+  // API send
+  const sendOrderToOwner = () => {
     if (cart.length === 0) return;
 
-    const orderText = cart
-      .map((c) => `${c.name} x${c.qty}`)
-      .join(", ");
+    const orderText = cart.map((c) => `${c.name} x${c.qty}`).join(", ");
 
     fetch("http://localhost:8080/api/sendOrder", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         items: orderText,
+        quantity: cart.length,
         total: total,
       }),
     })
@@ -116,11 +120,12 @@ function App() {
         ))}
       </div>
 
-      {/* Menu List */}
+      {/* Menu Grid */}
       <div className="menu-grid">
         {filteredMenu.map((item) => (
           <div className="menu-card" key={item.id}>
             <img src={item.image} alt={item.name} />
+
             <h3>{item.name}</h3>
             <p>{item.category}</p>
 
@@ -154,32 +159,30 @@ function App() {
               size={200}
             />
 
-            {/* 🔥 Place Order Button (API call) */}
-            <button className="add-btn" onClick={sendOrder}>
+            {/* Confirm & Send Order */}
+            <button className="add-btn" onClick={sendOrderToOwner}>
               Confirm & Send Order
             </button>
 
-            <button className="close-btn" onClick={() => setShowQR(false)}>
-              Close
-            </button>
+            <button className="close-btn" onClick={() => setShowQR(false)}>Close</button>
           </div>
         </div>
       )}
 
-      {/* Cart Bar */}
+      {/* Bottom Fixed Bar */}
       {cart.length > 0 && (
         <div className="cart-bar">
           <span>🛍️ {cart.length} items | ₹{total}</span>
+
+          {/* 🔥 New Button — Send Directly to Owner */}
+          <button onClick={sendOrderToOwner}>Send to Owner</button>
+
+          {/* QR Button */}
           <button onClick={() => setShowQR(true)}>Proceed to Pay</button>
-          
         </div>
       )}
     </div>
-
-    
   );
-
-  
 }
 
 export default App;
