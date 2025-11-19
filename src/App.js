@@ -34,7 +34,7 @@ function App() {
 
   // Splash screen
   useEffect(() => {
-    const timer = setTimeout(() => setShowSplash(false), 4000);
+    const timer = setTimeout(() => setShowSplash(false), 3000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -84,7 +84,7 @@ function App() {
 
     const orderText = cart.map((c) => `${c.name} x${c.qty}`).join(", ");
 
-    fetch("http://172.20.10.8:8080/api/sendOrder", {
+    fetch(" https://angry-gifts-lay.loca.lt/api/sendOrder", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
